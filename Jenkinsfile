@@ -23,10 +23,20 @@ npm run build'''
         sh 'echo "deploy" '
       }
     }
-    stage('slack') {
-      steps {
-        sh 'slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"'
-      }
-    }
   }
+
+post {
+    success {
+        slackSend channel: '#jenkins-ci',
+                  color: 'good',
+                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+    }
+
+     failure  {
+        slackSend channel: '#jenkins-ci',
+                  color: 'RED',
+                  message: "The pipeline ${currentBuild.fullDisplayName} has failed."
+    }
+}
+
 }
