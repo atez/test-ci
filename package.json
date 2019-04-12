@@ -1,0 +1,37 @@
+{
+  "name": "test-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/start.js",
+  "scripts": {
+    "test": "mocha ./test/*.js",
+    "build": "tsc",
+    "build-watch": "tsc --watch",
+    "start": "node ./dist/start.js ",
+    "lint": "tslint --fix   -c tslint.json 'src/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atezhill/test-ci.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atezhill/test-ci/issues"
+  },
+  "homepage": "https://github.com/atezhill/test-ci#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/chai": "^4.1.7",
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.13.4",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.2",
+    "supertest": "^4.0.2",
+    "typescript": "^3.4.3"
+  }
+}

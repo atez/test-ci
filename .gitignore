@@ -1,0 +1,8 @@
+node_modules
+*.log
+*.log.*
+.vscode
+dist
+.idea
+yarn-error.log
+yarn.lock
